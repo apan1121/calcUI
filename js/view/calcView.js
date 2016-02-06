@@ -44,6 +44,7 @@ define([
         },
         clickButton: function(e){
             // 取得點擊按鈕的值
+            this.showView.text(this.showView.text().trim());
             var value = $(e.currentTarget).data("value");
 
             // 如果運算元顯示位值為 ＝，清空運算元顯示位值的內容（代表剛剛點了= 現在要重新開始計算）
@@ -60,7 +61,7 @@ define([
                     this.saveDone = false;
                 }
                 // 如果顯示內容是 0 先清空
-                if (this.showView.text() == 0) {
+                if (this.showView.text().slice(-1)!="." && this.showView.text() == 0) {
                     this.showView.text("");
                 }
                 // 字串相加方式塞入數字
@@ -97,6 +98,10 @@ define([
                         break;
                     case ".":
                         // 如果是 . 跟數字一樣塞入顯示值
+                        if (this.saveDone) {
+                            this.showView.text(0);
+                        }
+                        this.saveDone = false;
                         this.showView.text( this.showView.text()+""+value);
                         break;
                     default:
