@@ -1,0 +1,90 @@
+body{
+    margin: 0px;
+}
+.calc{
+    max-width: 400px;
+}
+
+.calcDashboard{
+    width:100%;
+    padding: 3%;
+    margin:2%;
+    border:1px solid #999;
+    border-radius: 10px;
+    background: #f8f0ff;
+    box-shadow: 0px 1px 5px #555;
+    .screen{
+        width:98%;
+        border: 2px solid #333;
+        margin-bottom: 2%;
+        border-radius: 5px;
+        background: #666;
+        color: #0F0;
+        .operand{
+            display: inline-block;
+            font-size: 1.5em;
+            line-height: 2em;
+            padding-left: 2%;
+            text-align:left;
+            width: 5%;
+        }
+        .number{
+            display: inline-block;
+            font-size: 1.5em;
+            line-height: 2em;
+            padding-right: 2%;
+            text-align: right;
+            width: 89%;
+        }
+    }
+    .keyboard{
+        width: 98%;
+        .row{
+            text-align: center;
+            .empty{
+                text-align: center;
+                width:21.5%;
+                margin:1%;
+                font-size: 2em;
+                line-height: 2.2em;
+                display: inline-block;
+                border: 1px solid #FAFAFA;
+            }
+            .button{
+                text-align: center;
+                width:21.5%;
+                margin:1%;
+                font-size: 2em;
+                line-height: 2.2em;
+                display: inline-block;
+                border: 1px solid #aaa;
+                border-radius: 5px;
+                cursor: pointer;
+                box-shadow: 0px 1px 5px #AAA;
+
+                -webkit-user-select: none;
+                -moz-user-select: none;
+
+                &.number{
+                    background:#FFC;
+                    &:hover{
+                        background:#FFA;
+                    }
+                    &:active{
+                        background:#FF0;
+                    }
+                }
+                &.operand{
+                    background:#ccffcc;
+                    &:hover{
+                        background:#b3ffb3;
+                    }
+                    &:active{
+                        background:#80ff80;
+                    }
+                }
+            }
+        }
+
+    }
+}

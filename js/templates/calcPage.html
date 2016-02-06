@@ -1,0 +1,38 @@
+<!--
+    計算機面板
+-->
+<div class='calcDashboard'>
+    <!--顯示區塊-->
+    <div class="screen">
+        <div class="operand">
+
+        </div>
+        <div class="number">
+            0
+        </div>
+    </div>
+    <div class="keyboard">
+        <!-- 按鈕陣列排列 -->
+        <%_.each(calcButton, function( buttons ) { %>
+            <div class="row">
+                <%_.each(buttons, function( value ) { %>
+                    <%if(value == ""){%>
+                        <div class="empty">
+                            <%=value%>
+                        </div>
+                    <%} else {%>
+                        <%
+                            type = " number"
+                            if (isNaN(value)) {
+                                type = " operand";
+                            }
+                        %>
+                        <div class="button<%=type%>" data-value="<%=value%>">
+                            <%=value%>
+                        </div>
+                    <%}%>
+                <% });%>
+            </div>
+        <% });%>
+    </div>
+</div>
